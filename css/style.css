@@ -90,6 +90,8 @@ footer img   {
 .hero-content   {
   color: #FFF;
   padding-top: 130px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .hero-content h1   {
   font-size: 100px;
@@ -185,6 +187,7 @@ footer img   {
 }
 
 /* responsive */
+/* mobile devices */
 @media screen and (max-width:768px) {
   body   {
     font-size: 14px;
