@@ -107,7 +107,9 @@ footer img   {
   text-decoration: none;
   font-size: 28px;
 }
-
+.hero-content a:hover { 
+  background-image: linear-gradient(to bottom, #181f31, #1a2235, #1d2538, #1f283c, #222b40, #24384f, #24465d, #24546a, #27717d, #408e87, #6baa8a, #a0c38c);
+}
 /* basic site sections */
 .site-section   {
   padding-bottom: 50px;
