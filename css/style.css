@@ -87,7 +87,8 @@ footer img   {
   background-size: cover;
 }
 .hero-content   {
-  color: #FFF;
+  background-color: rgba(0,0,0,0.5);
+  border:2px solid black;
   padding-top: 130px;
 }
 .hero-content h1   {
