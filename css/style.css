@@ -49,6 +49,7 @@ nav     {
 nav ul   {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 nav ul li {
   display: inline-block;
@@ -89,6 +90,8 @@ footer img   {
 .hero-content   {
   color: #FFF;
   padding-top: 130px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .hero-content h1   {
   font-size: 100px;
@@ -136,7 +139,7 @@ footer img   {
 /* feature boxes */
 .feature-box   {
   display: inline-block;
-  width: 33%;
+  width: 32%;
   padding: 20px 30px;
 }
 .feature-box img  {
@@ -155,7 +158,7 @@ footer img   {
 /* testimonial boxes */
 .testimonial-box   {
   display: inline-block;
-  width: 33%;
+  width: 32%;
   padding: 20px 30px;
 }
 .testimonial-content   {
@@ -181,4 +184,70 @@ footer img   {
 }
 .testimonial-author span {
   font-size: 14px;
+}
+
+/* responsive */
+/* mobile devices */
+@media screen and (max-width:768px) {
+  body   {
+    font-size: 14px;
+  }
+
+  /* header responsive */
+  #logo   {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  nav     {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  nav a   {
+    font-size: 12px;
+  }
+
+  /* hero responsive */
+  .hero       {
+    min-height: 300px;
+  }
+  .hero-content   {
+    padding-top: 80px;
+  }
+  .hero-content h1     {
+    font-size: 30px;
+  }
+  .hero-content p      {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  .hero-content a      {
+    font-size: 14px;
+    padding: 5px 12px;
+    border-width: 1px;
+    background: #FFF;
+    color: #333;
+  }
+
+  /* site section responsive */
+  .site-section-inside {
+    width: 95%;
+  }
+  .section-header h2   {
+    font-size: 22px;
+  }
+
+  /* feature box responsive */
+  .feature-box   {
+    display: block;
+    width: 100%;
+  }
+
+  /* testimonial box responsive */
+  .testimonial-box   {
+    display: block;
+    width: 100%;
+  }
 }
