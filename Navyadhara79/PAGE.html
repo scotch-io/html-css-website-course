@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>natURe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amiri|Cinzel|Cormorant|Cormorant+Garamond|Fascinate+Inline|Lora|Merriweather|Montserrat|Nunito|Oswald|PT+Serif|Philosopher|Poppins|Raleway|Satisfy|Special+Elite|ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <style>
+    
+    
+     * {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  /* background: #8404fa; */
+  background: url(https://kbdevstorage1.blob.core.windows.net/asset-blobs/19542_en_1);
+  
+  font-family: 'Roboto Condensed', sans-serif;
+  color: black;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+}
+#quote{
+  margin-top: 50px;
+  
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 40px;
+  text-shadow: 1px 0px 3px black;
+  font-weight: 600;
+}
+
+
+
+a:hover{
+  color: rgb(0, 124, 52);
+  text-decoration: none;
+  
+}
+
+
+
+.header {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+}
+.burger {
+  position: fixed;
+  z-index: 10;
+  right: 25px;
+  top: 25px;
+  cursor: pointer;
+  
+  transform: rotateY(0);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.burger_patty {
+  width: 28px;
+  height: 2px;
+  margin: 0 0 4px 0;
+  background: rgb(0, 0, 0);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.burger_patty:last-child {
+  margin-bottom: 0;
+}
+.burger--close {
+  transform: rotate(180deg);
+}
+.burger--close .burger_patty:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.burger--close .burger_patty:nth-child(2) {
+  opacity: 0;
+}
+.burger--close .burger_patty:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -4px);
+}
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+}
+.menu--active {
+  visibility: visible;
+}
+.menu_brand, .menu_list {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+    
+}
+.menu_list {
+  margin: 0;
+  padding: 0;
+  background: #f79e02;
+  list-style-type: none;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  font-family: 'Poppins', sans-serif;
+  
+
+}
+.menu_list--active {
+  transform: translate3d(0, 0, 0);
+}
+.menu_brand {
+  background: #2b335c;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translate3d(0, 100%, 0);
+}
+.menu_brand--active {
+  transform: translate3d(0, 0, 0);
+}
+.menu_item {
+  transform: translate3d(500px, 0, 0);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu_item--active {
+  transform: translate3d(0, 0, 0);
+}
+.menu_link {
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  padding: 15px 0;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu_link:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  background: white;
+  transform: translateX(-50%);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu_link:hover:before {
+  width: 100%;
+}
+
+.menu_link:hover{
+  color: rgb(71, 0, 0);
+}
+.menu .menu_item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.menu .menu_item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.menu .menu_item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.menu .menu_item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.menu .menu_item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+.menu .menu_item:nth-child(6) {
+  transition-delay: 0.6s;
+}
+@media screen and (max-width: 768px) {
+  ul.menu_list, div.menu_brand {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  ul.menu_list--active, div.menu_brand--active {
+    transform: translate3d(0, 0, 0);
+  }
+  .menu_list {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+  }
+  .menu_link {
+    font-size: 24px;
+  }
+  .menu_brand {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+    
+  }
+  .menu_brand .logo {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
+.logo {
+  width: 700px;
+  height: 700px;
+  background-image: url(Nat.png);
+    background-size: cover;
+  /* border:0.5px solid white; */
+  
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  font-weight: 400;
+}
+main {
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 52.96px;
+}
+main h1 > a {
+  color: white;
+  text-decoration: none;
+  font-size: 48px;
+  font-weight: 300;
+}
+.support {
+  position: fixed;
+  bottom: 24px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+.ur{
+  color: red;
+}
+
+header a{
+    text-decoration: none;
+    color: rgb(2, 2, 2);
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin: 10px;
+   
+    
+}
+
+header{
+  background: rgba(255, 196, 0, 0.219);
+  
+}
+
+
+#pagename{
+  margin-top: 250px;
+  font-size: 100px;
+  font-family: 'Raleway', sans-serif;
+  /* font-family: 'ZCOOL XiaoWei', serif; */
+  /* font-family: 'Lora', serif; */
+  
+  background: center;
+  text-shadow: 1px 3px 2px black,
+                0px 1px 0px white;
+
+}
+
+.btn-group{
+  margin-top: 16px;
+  margin-left: 4px;
+  color: white;
+  
+}
+
+#mainnavbar{
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+
+#red{
+  color: #EA1C2C;
+}
+
+
+li{
+  margin-top: 16px;
+  scroll-margin-top: 20px;
+  display: inline-block;
+ 
+  
+}
+    </style>
+</head>
+<body>
+
+  <header id="mainnavbar" class="fixed-top">
+    <nav id="forr">
+      <ul>
+          <li class="btn btn-outline-warning active" data-toggle="tooltip"><a href="">Home</a></li>
+          <!-- <li class="btn btn-outline-warning active"><a href="">RESOURCES</a></li> -->
+          <li class="btn btn-outline-warning active"><a href="">About us</a></li>
+       
+      
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-outline-dark dropdown-toggle" data-placement="bottom" title="Click to Login/Sign-up" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            JOIN
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="/Join/login.html">LOGIN</a>
+            <a class="dropdown-item" href="/Join/login.html">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </ul>
+    </nav>
+      <div class="burger">
+        <div class="burger_patty"></div>
+        <div class="burger_patty"></div>
+        <div class="burger_patty"></div>
+      </div>
+
+      <nav class="menu">
+        <div class="menu_brand">
+          <a href=""><div class="logo"></div></a>
+        </div>
+        <ul class="menu_list">
+          <li class="menu_item"><a href="HOME .html" class="menu_link">HOME</a></li>
+          <li class="menu_item"><a href="" class="menu_link">Organisations</a></li>
+          <li class="menu_item"><a href="" class="menu_link">events</a></li>
+          <li class="menu_item"><a href="" class="menu_link">Causes</a></li>
+          <li class="menu_item"><a href="" class="menu_link">Impacts</a></li>
+          <li class="menu_item"><a href="" class="menu_link">SIgn petetions</a></li>
+          
+          
+        </ul>
+      </nav>
+</header>
+
+<section class="jumbotron container-fluid" id="pagename">
+<div class="row justify-content-center">
+nat<span id="red">UR</span>e.org
+</div>
+</section>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+
+
+
+$(function (){
+    $(document).scroll(function(){
+        var $nav =$("#mainnavbar");
+        $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+
+    });
+
+});
+
+(function() {
+
+var Menu = (function() {
+var burger = document.querySelector('.burger');
+var menu = document.querySelector('.menu');
+var menuList = document.querySelector('.menu_list');
+var brand = document.querySelector('.menu_brand');
+var menuItems = document.querySelectorAll('.menu_item');
+
+var active = false;
+
+var toggleMenu = function() {
+if (!active) {
+  menu.classList.add('menu--active');
+  menuList.classList.add('menu_list--active');
+  brand.classList.add('menu_brand--active');
+  burger.classList.add('burger--close');
+  for (var i = 0, ii = menuItems.length; i < ii; i++) {
+    menuItems[i].classList.add('menu_item--active');
+  }
+  
+  active = true;
+} else {
+  menu.classList.remove('menu--active');
+  menuList.classList.remove('menu_list--active');
+  brand.classList.remove('menu_brand--active');
+  burger.classList.remove('burger--close');
+  for (var i = 0, ii = menuItems.length; i < ii; i++) {
+    menuItems[i].classList.remove('menu_item--active');
+  }
+  
+  active = false;
+}
+};
+
+var bindActions = function() {
+burger.addEventListener('click', toggleMenu, false);
+};
+
+var init = function() {
+bindActions();
+};
+
+return {
+init: init
+};
+
+}());
+
+Menu.init();
+
+}());
+
+
+</script>
+</body>
+</html>
